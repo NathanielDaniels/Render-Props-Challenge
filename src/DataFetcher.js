@@ -30,7 +30,7 @@ class DataFetcher extends Component {
             .then(data => this.setState({data: data, loading: false}))
         const {loading, data} = this.state
         console.log("loading", loading)
-        console.log("data", data.name)
+        console.log("data", data)
     }
     
     render() {
