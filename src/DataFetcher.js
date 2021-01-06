@@ -39,7 +39,8 @@ class DataFetcher extends Component {
 
     return (
 
-      loading ? <h1>...loading</h1> : JSON.stringify(data)
+      // loading ? <h1>...loading</h1> : JSON.stringify(data)
+      loading ? <h1>...loading</h1> : <h1>{JSON.stringify(data).slice(9,23) + " is my hero"}</h1>
 
       /**
        * Part 1: Figure out what you're returning here. You should pass the 
