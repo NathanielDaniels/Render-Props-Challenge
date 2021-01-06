@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 
 /**
  * Challenge: Fill in the blanks in the code here (part 1) and in the App.js
@@ -18,48 +18,45 @@ import React, {Component} from "react"
  */
 
 class DataFetcher extends Component {
-    state = {
-        loading: false,
-        data: null
-    }
-    
-    componentDidMount() {
-        this.setState({loading: true})
-        fetch(this.props.url)
-            .then(res => res.json())
-            .then(data => this.setState({data: data, loading: false}))
-        const {loading, data} = this.state
-        console.log("loading", loading)
-        console.log("data", data)
-    }
-    
-    render() {
-        // console.log(this.state.data)
-        // const {loading, data} = this.state
-        // console.log("loading", loading)
-        // console.log("data", data)
-        
-        
-        return (
-           
-            <h1>{this.state.loading ? "...loading" : 'FUCK'}</h1>
-        
-            /**
-             * Part 1: Figure out what you're returning here. You should pass the 
-             * loading state and the data state through to the component needing it.
-             * 
-             * Remember: the render props pattern allows us to separate the data 
-             * and logic (like fetching data and setting the loading state) from 
-             * the UI (JSX). Think about which one of those this component is in 
-             * charge of. You'll need to pass both pieces of state to whatever 
-             * component is making use of the DataFetcher
-             * 
-             * Also, there's more than one "correct" way to make use of the render
-             * props pattern. Check App.js to determine which way it's being implemented
-             * in this challenge.
-             */
-        )
-    }
+  state = {
+    loading: false,
+    data: null
+  }
+
+  componentDidMount() {
+    this.setState({ loading: true })
+    fetch(this.props.url)
+      .then(res => res.json())
+      .then(data => this.setState({ data: data, loading: false }))
+  }
+
+  render() {
+    const { loading, data } = this.state
+
+    // for (let i in data) {
+    //   console.log([data[i]])
+    // }
+
+    return (
+
+      loading ? <h1>...loading</h1> : JSON.stringify(data)
+
+      /**
+       * Part 1: Figure out what you're returning here. You should pass the 
+       * loading state and the data state through to the component needing it.
+       * 
+       * Remember: the render props pattern allows us to separate the data 
+       * and logic (like fetching data and setting the loading state) from 
+       * the UI (JSX). Think about which one of those this component is in 
+       * charge of. You'll need to pass both pieces of state to whatever 
+       * component is making use of the DataFetcher
+       * 
+       * Also, there's more than one "correct" way to make use of the render
+       * props pattern. Check App.js to determine which way it's being implemented
+       * in this challenge.
+       */
+    )
+  }
 }
 
 export default DataFetcher
