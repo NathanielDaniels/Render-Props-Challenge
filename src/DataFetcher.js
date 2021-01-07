@@ -32,15 +32,13 @@ class DataFetcher extends Component {
 
   render() {
     const { loading, data } = this.state
-
-    // for (let i in data) {
-    //   console.log([data[i]])
-    // }
+    const result = Object.create(data)
+    // console.log(result.gender)
 
     return (
 
       // loading ? <h1>...loading</h1> : JSON.stringify(data)
-      loading ? <h1>...loading</h1> : <h1>{JSON.stringify(data).slice(9,23) + " is my hero"}</h1>
+      loading ? <h1>...loading</h1> : <h1>{result.name + " is my hero"}</h1>
 
       /**
        * Part 1: Figure out what you're returning here. You should pass the 
