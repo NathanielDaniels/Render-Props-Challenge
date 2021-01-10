@@ -37,7 +37,10 @@ class DataFetcher extends Component {
 
     return (
 
-      // loading ? <h1>...loading</h1> : JSON.stringify(data)
+      //! Turn data into JSON String
+      // loading ? <h1>...loading</h1> : JSON.stringify(data) 
+
+      //! create object for new data
       loading ? <h1>...loading</h1> : <h1>{result.name + " is my hero"}</h1>
 
       /**
