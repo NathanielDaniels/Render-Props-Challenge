@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-/**
+/*
  * Challenge: Fill in the blanks in the code here (part 1) and in the App.js
  * file (part 2) until the code is working.
  * 
@@ -43,7 +43,7 @@ class DataFetcher extends Component {
       //! create object for new data
       loading ? <h1>...loading</h1> : <h1>{result.name + " is my hero"}</h1>
 
-      /**
+      /*
        * Part 1: Figure out what you're returning here. You should pass the 
        * loading state and the data state through to the component needing it.
        * 
